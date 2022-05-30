@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-title h2,
+.text-title h4 {
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+
+.text-title h2 {
+  font-family: "Indie Flower", cursive;
+  font-size: 2.5em;
+}
+
+.text-title h4 {
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+.text-title hr {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.search-section {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.search-section h2 {
+  line-height: 50px;
+}
+
+.search-section input {
+  box-shadow: rgb(203, 209, 214) 0px 20px 30px -10px;
+}
+
+.modal-add-bg,
+.modal-edit-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 0.5s;
+}
+
+.modal-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-section {
+  border-radius: 5px;
+}
+
+.modal-add-close,
+.modal-edit-close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Requibtn btn-sm btn-danger meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Bookshelf App</title>
+  </head>
+  <body>
+    <main class="my-3 py-3">
+      <section class="text-title pb-5 mb-5">
+        <div class="container">
+          <div class="row align-items-start text-center">
+            <h2 class="text-uppercase">digital bookshelf apps</h2>
+            <h4 class="text-capitalize">spend less, read more</h4>
+            <hr class="border border-2 mb-2" />
+            <div class="input-group">
+              <button
+                class="btn-outline-danger mx-auto text-uppercase"
+                id="btn-modal"
+              >
+                add your own book
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="search-section mb-5 pb-5">
+        <div class="container">
+          <div class="row text-center">
+            <h2 class="mb-3 text-capitalize">find your book</h2>
+            <form id="searchBook">
+              <div class="input-group input-group-lg mb-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-lg"
+                  id="searchBookTitle"
+                  placeholder="book title here..."
+                />
+              </div>
+              <div class="input-group">
+                <button type="submit" class="btn-danger btn-lg mx-auto">
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="book-shelf mb-3 pb-5">
+        <div class="container">
+          <div class="row align-items-start">
+            <h3 class="text-center text-capitalize mb-5">
+              not finished reading
+            </h3>
+            <div id="incompleteBookshelfList" class="book_list row">
+              <!-- <article class="book_item col-lg-3 col-md-3 col-xs-12 mb-5">
+                <img
+                  src="img/img.jpg"
+                  width="250"
+                  class="img-thumbnail rounded mb-3"
+                  />
+                  <h3>Book Title</h3>
+                  <p>Penulis: <span>John Doe</span></p>
+                  <p>Tahun: <span>2002</span></p>
+
+                  <div class="action">
+                    <button class="btn btn-sm btn-success">
+                      <i class="fas fa-check"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </article> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="book-shelf mb-3 pb-5">
+        <div class="container">
+          <div class="row align-items-start">
+            <h3 class="text-center text-capitalize mb-5">finished reading</h3>
+            <div id="completeBookshelfList" class="book_list row">
+              <!-- <article class="book_item col-lg-3 col-md-3 col-xs-12 mb-5">
+                <h3>Book Title</h3>
+                <p>Penulis: <span>John Doe</span></p>
+                <p>Tahun: <span>2002</span></p>
+                
+                <div class="action">
+                  <button class="btn btn-sm btn-success">
+                    <i class="fas fa-undo-alt"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </article> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal Add Own Book -->
+      <section
+        class="d-flex justify-content-center align-items-center modal-add-bg"
+      >
+        <div
+          class="
+            d-flex
+            justify-content-center
+            flex-column
+            bg-white
+            p-5
+            text-danger
+            position-relative
+            modal-section
+          "
+        >
+          <h2 class="text-center mb-5 mt-3 text-uppercase">
+            ADD YOUR OWN BOOK
+          </h2>
+          <form id="inputBook">
+            <div class="mb-3">
+              <label for="inputBookTitle" class="form-label">Book Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputBookTitle"
+                placeholder="Harry Potter And The Sorceres Stone"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="inputBookAuthor" class="form-label">Author</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputBookAuthor"
+                placeholder="J.K Rowling"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="inputBookYear" class="form-label">Year</label>
+              <input
+                type="number"
+                class="form-control"
+                id="inputBookYear"
+                placeholder="2002"
+                required
+              />
+            </div>
+            <div class="form-check mb-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inputBookIsComplete"
+              />
+              <label class="form-check-label" for="inputBookIsComplete">
+                Selesai dibaca
+              </label>
+            </div>
+            <div class="input-group input-group-md">
+              <button
+                type="submit"
+                id="bookSubmit"
+                class="btn btn-danger btn-md mx-auto text-capitalize"
+              >
+                add book to shelf
+              </button>
+            </div>
+          </form>
+          <span class="modal-add-close">X</span>
+        </div>
+      </section>
+
+      <!-- Modal Edit Book List -->
+      <section
+        class="d-flex justify-content-center align-items-center modal-edit-bg"
+      >
+        <div
+          class="
+            d-flex
+            justify-content-center
+            flex-column
+            bg-white
+            p-5
+            text-danger
+            position-relative
+            modal-section
+          "
+        >
+          <h2 class="text-center mb-5 mt-3 text-uppercase">
+            edit YOUR OWN BOOK
+          </h2>
+          <form id="editBook">
+            <div class="mb-3">
+              <label for="inputBookTitle" class="form-label">Book Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputBookTitle"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="inputBookAuthor" class="form-label">Author</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputBookAuthor"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="inputBookYear" class="form-label">Year</label>
+              <input
+                type="number"
+                class="form-control"
+                id="inputBookYear"
+                required
+              />
+            </div>
+
+            <div class="input-group input-group-md">
+              <button
+                type="submit"
+                id="bookSubmit"
+                class="btn btn-danger btn-md mx-auto text-capitalize"
+              >
+                edit book
+              </button>
+            </div>
+          </form>
+          <span class="modal-edit-close">X</span>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/functions.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
